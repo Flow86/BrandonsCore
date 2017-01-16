@@ -30,6 +30,7 @@ catchError() {
         withDockerContainer('openjdk:8-jdk') {
             stage("Build") {
                 sh """set -x
+                      chmod +x ./gradlew
                       ./gradlew build -x test
                    """
 
